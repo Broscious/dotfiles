@@ -3,6 +3,5 @@ alias shutdown='sudo shutdown now -h'
 
 alias emacs='emacs -nw'
 
-#alias gccp='g++ -ansi -pedantic-errors -Wall'
-
-alias docker_kill_all='docker kill $(docker ps -q)'
+#this works around the issue of sudo not inheriting bash aliases by resolving the alias before calling sudo and retains the path allowing scripts to be run
+alias sudo='sudo -s PATH="$PATH" '
