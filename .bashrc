@@ -105,6 +105,11 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+# Function definitions.
+# source additional functions
+
+[ -f ~/.bash_functions ] && source ~/.bash_functions
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -119,3 +124,5 @@ fi
 export EDITOR="emacs -nw"
 
 export PATH="$HOME/bin:$PATH"
+
+eval $(thefuck --alias)
