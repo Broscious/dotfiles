@@ -14,14 +14,14 @@ functions()
 #
 # mkcd - makedir and cd in it
 # usage: mkcd <file>
-mkcd ()
+mkcd()
 {
     mkdir $1 && cd $1
 }
 
 # cpcd - cp and cd to destination
 # usage: cpcd <cp-arguments>
-cpcd ()
+cpcd()
 {
     cp $@ && cd ${!#}
 }
@@ -109,4 +109,26 @@ compress()
     *.rar) shift && rar $FILE $* ;;
     *.7z)  shift && 7za a $FILE $* ;;
   esac
+}
+
+
+# notes - show notes
+# usage: notes
+notes()
+{
+    cat ~/.notes
+}
+
+# mknote - add a line to the notes
+# usage: addnote <note>
+mknote()
+{
+    echo $1 >> ~/.notes
+}
+
+# rmnote - remove note line
+# usage: rmnote <case insensitive pattern to remove>
+rmnote()
+{
+    sed -i "/$1/Id" ~/.notes
 }
