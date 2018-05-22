@@ -70,7 +70,7 @@ extract()
 {
     local e=0 i c
     for i; do
-    if [ -f $i && -r $i ]; then
+	if [ -f $i -a -r $i ]; then
 	c=
 	case $i in
 	    *.tar.bz2) c='tar xjf'    ;;
