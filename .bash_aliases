@@ -7,10 +7,10 @@ alias emacs='emacs -nw'
 alias sudo='sudo -s PATH="$PATH" '
 
 # fast cd ups/whatever
-alias .='pwd'
+#alias .='pwd'
 alias ..='cd ..'
-alias ...='cd ../../../'
-alias ....='cd ../../../../'
+alias ...='cd ../../'
+alias ....='cd ../../../'
 alias .....='cd ../../../../'
 alias prev='cd -'
 
