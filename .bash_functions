@@ -70,7 +70,8 @@ extract()
 {
     local e=0 i c
     for i; do
-	if [ -f $i -a -r $i ]; then
+	if [ -f $i ] && [ -r $i ]; then
+	#if [ -f $i ]; then
 	c=
 	case $i in
 	    *.tar.bz2) c='tar xjf'    ;;
@@ -131,4 +132,40 @@ mknote()
 rmnote()
 {
     sed -i "/$1/Id" ~/.notes
+}
+
+# trusthost - add certs from a site to a java keystore
+# usage: trusthost <host> <keystore> <keystore password>
+trusthost()
+{
+    HOST="$1"
+    KEYSTOREFILE="$2"
+    KEYSTOREPASS="$3"
+
+    # get the SSL certificate
+    openssl s_client -connect ${HOST} </dev/null \
+        | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' > ${HOST}.cert
+
+    # create a keystore and import certificate
+    keytool -import -noprompt -trustcacerts \
+        -alias ${HOST} -file ${HOST}.cert \
+        -keystore ${KEYSTOREFILE} -storepass ${KEYSTOREPASS}
+
+    # verify we've got it.
+    keytool -list -v -keystore ${KEYSTOREFILE} -storepass ${KEYSTOREPASS} -alias ${HOST}
+}
+
+# getjavatrust - retrieves the path to the java truststore
+# usage: getjavatrust
+getjavatrust()
+{
+    JAVA=$(readlink -f /usr/bin/java | sed "s:bin/java::")
+    CACERTS=${JAVA}lib/security/cacerts
+    JSSECERTS=${JAVA}lib/security/jssecacerts
+
+    if [ -f $JSSECERTS ]; then
+	echo $JSSECERTS
+    else
+	echo $CACERTS
+    fi
 }
