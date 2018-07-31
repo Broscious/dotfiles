@@ -19,6 +19,7 @@
   flycheck
   magit
   py-autopep8
+  web-mode
   ws-butler))
 
 (mapc #'(lambda (package)
