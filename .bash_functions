@@ -71,7 +71,6 @@ extract()
     local e=0 i c
     for i; do
 	if [ -f $i ] && [ -r $i ]; then
-	#if [ -f $i ]; then
 	c=
 	case $i in
 	    *.tar.bz2) c='tar xjf'    ;;
@@ -89,7 +88,7 @@ extract()
 	    *.zip)     c='unzip'      ;;
 	    *)     echo "$0: cannot extract \`$i': Unrecognized file extension" >&2; e=1 ;;
 	esac
-	[ $c ] && command $c "$i"
+	[ ! -z "$c" ] && command $c "$i"
     else
 	echo "$0: cannot extract \`$i': File is unreadable" >&2; e=2
     fi
