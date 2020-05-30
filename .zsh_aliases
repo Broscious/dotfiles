@@ -1,0 +1,30 @@
+
+alias shutdown='sudo /sbin/shutdown'
+
+#alias emacs='emacs -nw'
+alias emacs='/Applications/MacPorts/EmacsMac.app/Contents/MacOS/Emacs.sh -nw'
+
+# this works around the issue of sudo not inheriting bash aliases by resolving the alias before calling sudo and retains the path allowing scripts to be run
+alias sudo='sudo -s PATH="$PATH" '
+
+alias .='pwd'
+
+# home aliases
+alias home='cd ~'
+alias bin='cd ~/bin'
+
+alias mkdir="mkdir -pv"
+
+# safety first
+alias rm='rm -I --preserve-root'
+alias chown='chown --preserve-root'
+alias chmod='chmod --preserve-root'
+alias chgrp='chgrp --preserve-root'
+
+# confirmation
+alias mv='mv -i'
+alias cp='cp -i'
+alias ln='ln -i'
+
+# continue
+alias wget='wget -c'
