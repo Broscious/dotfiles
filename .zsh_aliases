@@ -28,3 +28,6 @@ alias ln='ln -i'
 
 # continue
 alias wget='wget -c'
+
+alias less='less -FSRXc'
+

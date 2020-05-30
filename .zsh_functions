@@ -79,3 +79,17 @@ compress()
     *.7z)  shift && 7za a $FILE $* ;;
   esac
 }
+
+# trash - move file to mac trash
+# usage: trash <file1> [file2] [file3]...
+trash ()
+{
+    command mv "$@" ~/.Trash ;
+}
+
+# ql - view file in mac's quick look
+# usage: ql <file>
+ql ()
+{
+    qlmanage -p "$*" >& /dev/null;
+}
