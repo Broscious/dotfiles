@@ -73,7 +73,12 @@ plugins=(
 	zsh-syntax-highlighting
 	zsh-autosuggestions
 	k
+  enhancd
 )
+
+[[ -s /Users/evbros/.autojump/etc/profile.d/autojump.sh ]] && source /Users/evbros/.autojump/etc/profile.d/autojump.sh
+
+autoload -U compinit && compinit -u
 
 source $ZSH/oh-my-zsh.sh
 
@@ -108,3 +113,7 @@ source $ZSH/oh-my-zsh.sh
 [ -f ~/.zsh_functions ] && source ~/.zsh_functions
 
 export EDITOR='emacs'
+
+ENHANCD_FILTER=fzy:fzf:peco; export ENHANCD_FILTER
+ENHANCD_HOOK_AFTER_CD='k -a'; export ENHANCD_HOOK_AFTER_CD
+#ENHANCD_DISABLE_DOT=1; export ENHANCD_DISABLE_DOT
