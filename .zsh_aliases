@@ -16,10 +16,12 @@ alias bin='cd ~/bin'
 alias mkdir="mkdir -pv"
 
 # safety first
-alias rm='rm -I --preserve-root'
-alias chown='chown --preserve-root'
-alias chmod='chmod --preserve-root'
-alias chgrp='chgrp --preserve-root'
+# Commenting out these because the flags aren't implemented on macs, probably should revisit how implementation specific flags are setup in my dotfiles in general
+#alias rm='rm -I --preserve-root'
+#alias chown='chown --preserve-root'
+#alias chmod='chmod --preserve-root'
+#alias chgrp='chgrp --preserve-root'
+alias rm='rm -i'
 
 # confirmation
 alias mv='mv -i'
@@ -31,3 +33,8 @@ alias wget='wget -c'
 
 alias less='less -FSRXc'
 
+# gw (gdub) helps unify usage of gradle vs gradlew to be correct for the given call
+alias gradle='gw'
+
+# This makes my getawskey last the maximum 12 hours so it doesn't expire
+alias getawskey='getawskey -duration 43200'
