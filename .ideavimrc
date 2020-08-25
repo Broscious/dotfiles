@@ -1,0 +1,29 @@
+set ignorecase
+set smartcase
+
+" Integrate with system clipboard
+set clipboard=unnamedplus,unnamed
+
+" https://youtrack.jetbrains.com/issue/VIM-959
+set ideamarks
+
+" https://youtrack.jetbrains.com/issue/VIM-1521
+set commentary
+
+let mapleader = ","
+" Alt + F7 in idea.
+" Find usages in file is Ctrl + F7.
+" Alt + E, then F, then U (through the menu bar) also seems to work fine.
+map <Leader>f :action FindUsages<CR>
+
+" Jump to next/previous error, show error description
+" https://stackoverflow.com/questions/13346245/keyboard-shortcut-to-display-error-in-intellij
+map <Leader>e :action ShowErrorDescription<CR>
+map <Space> :action GotoNextError<CR>
+
+" Shift + F6 in idea.
+" Alt + R, then R (through the menu bar) also seems to work fine.
+map gr :action RenameElement<CR>
+
+" Dumb but helps write sometimes when I would normally screw up
+map :W :w<CR>
