@@ -10,6 +10,8 @@ set ideamarks
 " https://youtrack.jetbrains.com/issue/VIM-1521
 set commentary
 
+set selectmode=ideaselection
+
 let mapleader = ","
 " Alt + F7 in idea.
 " Find usages in file is Ctrl + F7.
@@ -25,5 +27,12 @@ map <Space> :action GotoNextError<CR>
 " Alt + R, then R (through the menu bar) also seems to work fine.
 map gr :action RenameElement<CR>
 
+" <M-A-B> in idea
+" goes to the source
+map gs :action GotoImplementation<CR>
+
 " Dumb but helps write sometimes when I would normally screw up
 map :W :w<CR>
+
+" Open quick java doc
+map <Leader><Leader> :action QuickJavaDoc<CR>
