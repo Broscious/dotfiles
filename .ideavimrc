@@ -7,9 +7,11 @@ set clipboard=unnamedplus,unnamed
 " https://youtrack.jetbrains.com/issue/VIM-959
 set ideamarks
 
+" Incrementally search
+set incsearch
+
 " https://youtrack.jetbrains.com/issue/VIM-1521
 set commentary
-
 set selectmode=ideaselection
 
 let mapleader = ","
@@ -30,6 +32,16 @@ map gr :action RenameElement<CR>
 " <M-A-B> in idea
 " goes to the source
 map gs :action GotoImplementation<CR>
+
+" <A-F7> <C-F> in idea
+map gu :action FindUsages<CR>
+
+" Fix doc comment adds/fixes javadoc
+map gj :action FixDocComment<CR>
+
+" <M-A-L> <A-F> in idea
+" Run the reformatter on a code section
+map gf :action ReformatCode<CR>
 
 " Dumb but helps write sometimes when I would normally screw up
 map :W :w<CR>
