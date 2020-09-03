@@ -26,7 +26,7 @@ map <Leader>e :action ShowErrorDescription<CR>
 map <Space> :action GotoNextError<CR>
 
 map <Leader>f :action GotoFile<CR>
-map <Leader>f :action GotoClass<CR>
+map <Leader>c :action GotoClass<CR>
 
 " <M-A-B> in idea
 " goes to the source
