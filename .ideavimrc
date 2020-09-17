@@ -45,6 +45,13 @@ map gj :action FixDocComment<CR>
 " Run the reformatter on a code section
 map gf :action ReformatCode<CR>
 
+" <M-F9> in idea to help with rebuilding
+map <Leader>b :action CompileDirty<CR>
+" <A-D> in idea
+map <Leader>d :action Debug<CR>
+" <M-A-S-R> <A-R> in idea
+map <Leader>r :action Run<CR>
+
 " Dumb but helps write sometimes when I would normally screw up
 map :W :w<CR>
 
