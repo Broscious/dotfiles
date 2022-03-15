@@ -118,7 +118,9 @@ ENHANCD_FILTER=fzy:fzf:peco; export ENHANCD_FILTER
 ENHANCD_HOOK_AFTER_CD='k -a'; export ENHANCD_HOOK_AFTER_CD
 #ENHANCD_DISABLE_DOT=1; export ENHANCD_DISABLE_DOT
 
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/openjdk8/Contents/Home
+#export JAVA_HOME=/Library/Java/JavaVirtualMachines/openjdk8/Contents/Home
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/openjdk13/Contents/Home
+#export JAVA_HOME=/Library/Java/JavaVirtualMachines/openjdk17-temurin/Contents/Home
 
 # enable vim keybindings in zsh
 bindkey -v
