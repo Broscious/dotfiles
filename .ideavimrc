@@ -20,6 +20,8 @@ let mapleader = ","
 " Alt + E, then F, then U (through the menu bar) also seems to work fine.
 map <Leader>u :action FindUsages<CR>
 
+map <Leader>F :action FindInPath<CR>
+
 " Jump to next/previous error, show error description
 " https://stackoverflow.com/questions/13346245/keyboard-shortcut-to-display-error-in-intellij
 map <Leader>e :action ShowErrorDescription<CR>
