@@ -38,3 +38,6 @@ alias gradle='gw'
 
 # This makes my getawskey last the maximum 12 hours so it doesn't expire
 alias getawskey='getawskey -duration 43200'
+
+# easy time curl execution
+alias curltime='curl -w "@$HOME/.curl-format.txt" -o /dev/null -s'
